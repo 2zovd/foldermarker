@@ -1,31 +1,84 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import 'fonts'
 @import 'reset'
+@import 'media'
 
 body
     background-color: #336666
     margin: 20px 0
+    min-width: 320px
     
 .additional-wrapper
     background-color: #F4F5F7
     max-width: 1000px
     margin: 0 auto
     padding: 10px
+    padding-bottom: 0
     color: #336666
     font-family: Arial, Helvetica, sans-serif
     font-size: 14px
     line-height: 1.4
+    @include sm
+        font-size: 12px
 
-.additional-title
+.additional-title,
+h1
     padding: 26px 0 32px 0
     display: block
     text-align: center
     font-family: 'Roboto', sans-serif
     font-weight: 700
     font-size: 28px
+    text-transform: capitalize
+    @include sm
+        padding: 18px 0 22px 0
+        font-size: 20px
         
 .icons-container
     background-color: #fff
     padding: 40px
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    -ms-align-items: flex-start
+    align-items: flex-start
+    -webkit-justify-content: space-between
+    -moz-justify-content: space-between
+    -ms-justify-content: space-between
+    -o-justify-content: space-between
+    justify-content: space-between
+    -webkit-flex-direction: row
+    -moz-flex-direction: row
+    -ms-flex-direction: row
+    -o-flex-direction: row
+    flex-direction: row
+    -webkit-flex-wrap: wrap
+    -moz-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    -o-flex-wrap: wrap
+    flex-wrap: wrap
+    margin-bottom: 10px
+    &.single
+        .set-icons_item
+            &:nth-last-child(-n+5)
+                margin-bottom: 0
+    &.double
+        .set-icons_item
+            &:nth-last-child(-n+2)
+                margin-bottom: 0
+    @include lg
+        -webkit-justify-content: space-around
+        -moz-justify-content: space-around
+        -ms-justify-content: space-around
+        -o-justify-content: space-around
+        justify-content: space-around
+        -ms-align-items: center
+        align-items: center
+    @include sm
+        padding: 15px
+        
+.double-wrap
     display: -webkit-flex
     display: -moz-flex
     display: -ms-flex
@@ -38,21 +91,161 @@ body
     -ms-justify-content: space-between
     -o-justify-content: space-between
     justify-content: space-between
-    -webkit-flex-direction: row
-    -moz-flex-direction: row
-    -ms-flex-direction: row
-    -o-flex-direction: row
-    flex-direction: row
-    
+    -webkit-flex-wrap: wrap
+    -moz-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    -o-flex-wrap: wrap
+    flex-wrap: wrap
+    .icons-container
+        width: 49.5%
+        @include md
+            width: 100%
+    .set-icons
+        width: 31%
+        @include md
+            width: 50%
+        @include sm
+            width: 100%
+    .set-icons_item
+        width: 50%
+        &:nth-last-child(-n+2)
+            margin-bottom: 0
+        @include md
+            width: 33%
+    .set-picture
+        width: 62%
+        @include md
+            width: 50%
+        @include sm
+            width: 100%
+        
 .set-info
-    max-width: 200px
+    width: 22.5%
+    @include lg
+        margin-bottom: 25px
+        width: 100%
+    &.justify
+        width: 100%
     
-.set-title
+.set-info_title
     display: block
     color: #336666  
     font-family: 'Roboto', sans-serif
     font-weight: 700
     font-size: 28px
+    @include sm
+        font-size: 20px
     
-.set-description
+.set-info_description
+    margin-bottom: 10px
+    font-family: 'ArialMT', Arial, Helvetica, sans-serif
+    @include sm
+        font-size: 
+    
+.set-info_price
+    margin-bottom: 15px
+    
+.price
+    display: inline-block
+    font-family: 'ArialMT', Arial, Helvetica, sans-serif
+    font-weight: bold
+    &.discounted
+        opacity: 0.3
+        position: relative
+        text-decoration: line-through
+        
+%btn-custom
+    display: inline-block
+    min-width: 110px
+    min-height: 30px
+    margin-bottom: 10px
+    padding: 6px 14px 8px
+    font-family: 'ArialMT', Arial, Helvetica, sans-serif
+    font-size: 14px
+    font-weight: 400
+    border-radius: 15px
+    text-align: center
+    text-decoration: none
+    text-transform: capitalize
+    margin-right: 10px
+    border: none
+    box-shadow: none
+    @include sm
+        font-size: 12px
+        
+.btn-grey
+    @extend %btn-custom
+    background-color: #F4F5F7
+    color: #4A4A4A
+    &:hover
+        background-color: #e8e9eb
+    &:active
+        background-color: #dcddde
+    
+.btn-green
+    @extend %btn-custom
+    background-color: #0EB863
+    color: #fff
+    &:hover
+        background-color: #0da659
+    &:active
+        background-color: #0b934f
+            
+.set-picture
+    width: 28.5%
+    img
+        max-width: 100%
+        height: auto
+    @include lg
+        width: 50%
+    @include md
+        width: 100%
+        margin-bottom: 25px
+        text-align: left
+    @include sm
+        img
+            width: 150px
+    
+.set-icons
+    width: 41%
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    -webkit-justify-content: space-between
+    -moz-justify-content: space-between
+    -ms-justify-content: space-between
+    -o-justify-content: space-between
+    justify-content: space-between
+    -webkit-flex-wrap: wrap
+    -moz-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    -o-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-flex-direction: row
+    -moz-flex-direction: row
+    -ms-flex-direction: row
+    -o-flex-direction: row
+    flex-direction: row
+    @include lg
+        width: 50%
+    @include md
+        width: 100%
+        
+.set-icons_item
+    margin-bottom: 42px
+    width: 20%
+    text-align: left
+    @include sm
+        width: 20%
+        margin-bottom: 25px
+        text-align: left
+    img    
+        display: inline-block
+        max-width: 100%
+        height: auto
+        @include xs
+            max-width: 40px
+    
     
