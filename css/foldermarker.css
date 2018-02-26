@@ -249,12 +249,6 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .double-wrap .set-icons_item {
-    width: auto;
-  }
-}
-
 .double-wrap .set-picture {
   width: 62%;
 }
