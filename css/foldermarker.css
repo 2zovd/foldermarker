@@ -386,6 +386,7 @@ h1 {
 
 .set-icons {
   width: 41%;
+  margin-top: 15px;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -423,6 +424,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   .set-icons {
     width: 100%;
+    margin-top: 0;
   }
 }
 
