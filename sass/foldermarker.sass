@@ -84,8 +84,8 @@ h1
     display: -ms-flex
     display: -o-flex
     display: flex
-    -ms-align-items: center
-    align-items: center
+    -ms-align-items: stretch
+    align-items: stretch
     -webkit-justify-content: space-between
     -moz-justify-content: space-between
     -ms-justify-content: space-between
@@ -104,8 +104,12 @@ h1
         width: 31%
         @include md
             width: 50%
+            order: 3
         @include sm
             width: 100%
+    .set-info
+        @include md
+            order: 1
     .set-icons_item
         width: 50%
         &:nth-last-child(-n+2)
@@ -115,6 +119,7 @@ h1
     .set-picture
         width: 62%
         @include md
+            order: 2
             width: 50%
         @include sm
             width: 100%
